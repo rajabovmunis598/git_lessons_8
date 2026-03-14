@@ -1,0 +1,144 @@
+$navy: #1a3a5c;
+$light: #eef2f5;
+
+@mixin flex($align: center, $justify: flex-start, $gap: 0) {
+  display: flex;
+  align-items: $align;
+  justify-content: $justify;
+  gap: $gap;
+}
+
+@mixin card {
+  border-radius: 8px;
+  padding: 28px 24px;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+}
+
+.mck-btn {
+  padding: 12px 22px;
+  background: $navy;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+  &:hover { background: darken($navy, 8%); }
+}
+
+.mck-hero {
+  @include flex(center, space-between, 40px);
+  padding: 60px 60px 80px;
+  background: $light;
+  overflow: hidden;
+
+  &__left {
+    max-width: 420px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__right {
+    position: relative;
+    flex: 1;
+    @include flex(center, flex-end);
+    min-height: 480px;
+  }
+
+  &__bg-rect {
+    position: absolute;
+    top: -40px;
+    right: -60px;
+    width: 55%;
+    height: 88%;
+    background: $navy;
+    z-index: 0;
+    border-radius: 2px;
+  }
+
+  &__img {
+    position: relative;
+    z-index: 1;
+    width: 72%;
+    height: 460px;
+    object-fit: cover;
+    border-radius: 2px;
+    margin-right: 40px;
+  }
+
+  &__dots-tl {
+    position: absolute;
+    top: 0;
+    left: -10px;
+    z-index: 2;
+    width: 70px;
+    height: 60px;
+    background-image: radial-gradient(circle, #aabbcc 1.5px, transparent 1.5px);
+    background-size: 10px 10px;
+  }
+
+  &__dots-br {
+    position: absolute;
+    bottom: -10px;
+    right: 30px;
+    z-index: 2;
+    width: 70px;
+    height: 60px;
+    background-image: radial-gradient(circle, #aabbcc 1.5px, transparent 1.5px);
+    background-size: 10px 10px;
+  }
+}
+
+.mck-card {
+  @include card;
+  border: 1px solid #e5e9ef;
+  transition: box-shadow 0.3s, transform 0.3s;
+
+  &:hover {
+    box-shadow: 0 6px 24px rgba(26, 58, 92, 0.1);
+    transform: translateY(-4px);
+  }
+
+  &__icon {
+    width: 56px;
+    height: 56px;
+    background: $light;
+    border-radius: 8px;
+    @include flex(center, center);
+  }
+}
+
+.mck-link {
+  font-size: 13px;
+  font-weight: 600;
+  color: $navy;
+  text-decoration: none;
+  margin-top: auto;
+  &:hover { text-decoration: underline; }
+}
+
+@media (max-width: 768px) {
+  .mck-hero {
+    flex-direction: column;
+    padding: 40px 20px;
+
+    &__bg-rect,
+    &__dots-tl,
+    &__dots-br { display: none; }
+
+    &__img { width: 100%; height: 260px; margin-right: 0; }
+    &__left { max-width: 100%; }
+  }
+
+  nav {
+    flex-wrap: wrap !important;
+    padding: 12px 20px !important;
+    gap: 12px !important;
+  }
+
+  .grid-cols-3 { grid-template-columns: 1fr !important; }
+  .px-60 { padding-left: 20px !important; padding-right: 20px !important; }
+}
