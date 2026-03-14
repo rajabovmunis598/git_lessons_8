@@ -26,12 +26,14 @@ $light: #eef2f5;
   font-weight: 600;
   cursor: pointer;
   transition: background 0.2s;
-  &:hover { background: darken($navy, 8%); 
-  background-color: white;
-  border: 1px solid black;
-  color: black;
-  border-radius: 10px;
-}
+
+  &:hover {
+    background: darken($navy, 8%);
+    background-color: white;
+    border: 1px solid black;
+    color: black;
+    border-radius: 10px;
+  }
 }
 
 .mck-hero {
@@ -122,7 +124,10 @@ $light: #eef2f5;
   color: $navy;
   text-decoration: none;
   margin-top: auto;
-  &:hover { text-decoration: underline; }
+
+  &:hover {
+    text-decoration: underline;
+  }
 }
 
 @media (max-width: 768px) {
@@ -132,10 +137,19 @@ $light: #eef2f5;
 
     &__bg-rect,
     &__dots-tl,
-    &__dots-br { display: none; }
+    &__dots-br {
+      display: none;
+    }
 
-    &__img { width: 100%; height: 260px; margin-right: 0; }
-    &__left { max-width: 100%; }
+    &__img {
+      width: 100%;
+      height: 260px;
+      margin-right: 0;
+    }
+
+    &__left {
+      max-width: 100%;
+    }
   }
 
   nav {
@@ -144,9 +158,16 @@ $light: #eef2f5;
     gap: 12px !important;
   }
 
-  .grid-cols-3 { grid-template-columns: 1fr !important; }
-  .px-60 { padding-left: 20px !important; padding-right: 20px !important; }
+  .grid-cols-3 {
+    grid-template-columns: 1fr !important;
+  }
+
+  .px-60 {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
 }
+
 .mck-banner {
   position: relative;
   width: 100%;
@@ -194,7 +215,7 @@ $light: #eef2f5;
 
   &__text {
     font-size: 12px;
-    color: rgba(255,255,255,0.8);
+    color: rgba(255, 255, 255, 0.8);
     line-height: 1.6;
   }
 
@@ -202,7 +223,7 @@ $light: #eef2f5;
     padding: 10px 16px;
     background: transparent;
     color: #fff;
-    border: 1px solid rgba(255,255,255,0.5);
+    border: 1px solid rgba(255, 255, 255, 0.5);
     border-radius: 4px;
     font-size: 12px;
     font-weight: 600;
@@ -277,7 +298,7 @@ $light: #eef2f5;
   transition: box-shadow 0.3s, transform 0.3s;
 
   &:hover {
-    box-shadow: 0 6px 24px rgba(26,58,92,0.1);
+    box-shadow: 0 6px 24px rgba(26, 58, 92, 0.1);
     transform: translateY(-4px);
   }
 
@@ -321,13 +342,20 @@ $light: #eef2f5;
 
   .mck-testi {
     padding: 40px 20px;
-    &__quote { font-size: 15px; }
+
+    &__quote {
+      font-size: 15px;
+    }
   }
 
   .mck-articles {
-    &.px-60 { padding-left: 20px; padding-right: 20px; }
+    &.px-60 {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
   }
 }
+
 .mck-cta-banner {
   background: $light;
   padding: 80px 60px;
@@ -358,7 +386,7 @@ $light: #eef2f5;
   &__top {
     @include flex(flex-start, space-between, 60px);
     padding-bottom: 50px;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   }
 
   &__left {
@@ -383,15 +411,18 @@ $light: #eef2f5;
 
   &__addr {
     font-size: 13px;
-    color: rgba(255,255,255,0.65);
+    color: rgba(255, 255, 255, 0.65);
     line-height: 1.6;
   }
 
   &__email {
     font-size: 13px;
-    color: rgba(255,255,255,0.65);
+    color: rgba(255, 255, 255, 0.65);
     text-decoration: underline;
-    &:hover { color: #fff; }
+
+    &:hover {
+      color: #fff;
+    }
   }
 
   &__socials {
@@ -403,16 +434,18 @@ $light: #eef2f5;
   &__social {
     @include flex(center, flex-start, 10px);
     font-size: 13px;
-    color: rgba(255,255,255,0.65);
+    color: rgba(255, 255, 255, 0.65);
     text-decoration: none;
     transition: color 0.2s;
 
-    &:hover { color: #fff; }
+    &:hover {
+      color: #fff;
+    }
 
     svg {
       width: 32px;
       height: 32px;
-      background: rgba(255,255,255,0.1);
+      background: rgba(255, 255, 255, 0.1);
       border-radius: 50%;
       padding: 7px;
     }
@@ -433,7 +466,7 @@ $light: #eef2f5;
 
   &__form {
     @include flex(center, flex-start, 0);
-    border: 1px solid rgba(255,255,255,0.2);
+    border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 4px;
     overflow: hidden;
   }
@@ -441,25 +474,29 @@ $light: #eef2f5;
   &__input {
     flex: 1;
     padding: 14px 16px;
-    background: rgba(255,255,255,0.08);
+    background: rgba(255, 255, 255, 0.08);
     border: none;
     outline: none;
     font-size: 14px;
     color: #fff;
 
-    &::placeholder { color: rgba(255,255,255,0.4); }
+    &::placeholder {
+      color: rgba(255, 255, 255, 0.4);
+    }
   }
 
   &__submit {
     padding: 14px 16px;
-    background: rgba(255,255,255,0.15);
+    background: rgba(255, 255, 255, 0.15);
     border: none;
     color: #fff;
     cursor: pointer;
     @include flex(center, center);
     transition: background 0.2s;
 
-    &:hover { background: rgba(255,255,255,0.25); }
+    &:hover {
+      background: rgba(255, 255, 255, 0.25);
+    }
   }
 
   &__bottom {
@@ -469,7 +506,7 @@ $light: #eef2f5;
 
   &__copy {
     font-size: 12px;
-    color: rgba(255,255,255,0.35);
+    color: rgba(255, 255, 255, 0.35);
   }
 
   &__links {
@@ -478,16 +515,22 @@ $light: #eef2f5;
 
   &__link {
     font-size: 12px;
-    color: rgba(255,255,255,0.35);
+    color: rgba(255, 255, 255, 0.35);
     text-decoration: none;
-    &:hover { color: #fff; }
+
+    &:hover {
+      color: #fff;
+    }
   }
 }
 
 @media (max-width: 768px) {
   .mck-cta-banner {
     padding: 50px 20px;
-    &__title { font-size: 24px; }
+
+    &__title {
+      font-size: 24px;
+    }
   }
 
   .mck-footer {
@@ -498,8 +541,13 @@ $light: #eef2f5;
       gap: 32px;
     }
 
-    &__left { max-width: 100%; }
-    &__right { max-width: 100%; }
+    &__left {
+      max-width: 100%;
+    }
+
+    &__right {
+      max-width: 100%;
+    }
 
     &__bottom {
       flex-direction: column;
